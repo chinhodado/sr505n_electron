@@ -1,0 +1,31 @@
+<template class="task-template">
+    <section id="apikey-section" class="section js-section u-category-windows">
+        <header class="section-header">
+            <div class="section-wrapper">
+                <h1>
+                    <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+                    API Key
+                </h1>
+                <h3>Please enter your base64-encoded username/password below<br>
+                    To get it, inspect a network request on the router webpage after logged in.</h3>
+            </div>
+        </header>
+
+        <div class="demo">
+            <div style="width: 90%; text-align: center; margin: 0 auto">
+                <input id="api-key-input" class="demo-input" type="text" size="70">
+                <button class="demo-button" onclick="saveApiKey()">Save</button>
+            </div>
+        </div>
+        <script>
+            function saveApiKey() {
+                let apiKey = document.getElementById("api-key-input").value;
+                localStorage["apiKey"] = apiKey;
+                location.reload();
+            }
+
+            let apiKeyInput = document.getElementById("api-key-input");
+            apiKeyInput.value = localStorage["apiKey"];
+        </script>
+    </section>
+</template>

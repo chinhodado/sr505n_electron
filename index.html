@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SR505N Usage Viewer</title>
+      <link rel="stylesheet" href="assets/css/variables.css">
+      <link rel="stylesheet" href="assets/css/nativize.css">
+      <link rel="stylesheet" href="assets/css/global.css">
+      <link rel="stylesheet" href="assets/css/nav.css">
+      <link rel="stylesheet" href="assets/css/section.css">
+      <link rel="stylesheet" href="assets/css/demo.css">
+      <link rel="stylesheet" href="assets/css/github.css">
+
+      <link rel="import" href="sections/router.html">
+      <link rel="import" href="sections/apikey.html">
+      <link rel="import" href="sections/about.html">
+      <script src="scripts/sr505nMonitor.js"></script>
+  </head>
+
+  <body>
+    <nav class="nav js-nav">
+    <header class="nav-header">
+      <h1 class="nav-title">SR505N <br><strong>Usage Viewer</strong></h1>
+    </header>
+
+    <div class="nav-item u-category-windows">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+        Usages
+      </h5>
+        <button type="button" id="button-router-graph" data-section="router" class="nav-button default-section">View router usage</button>
+    </div>
+
+    <div class="nav-item u-category-menu">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+        System
+      </h5>
+      <button type="button" id="button-api-key" data-section="apikey" class="nav-button">Configure credentials</button>
+      <button type="button" id="button-about" data-section="about" class="nav-button">About</button>
+    </div>
+  </nav>
+
+    <main class="content js-content"></main>
+
+    <script>
+      require('./scripts/imports.js');
+      require('./scripts/nav.js');
+      require('./scripts/renderer.js');
+    </script>
+  </body>
+</html>

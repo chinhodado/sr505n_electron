@@ -1,0 +1,25 @@
+<template class="task-template">
+    <section id="router-section" class="section js-section u-category-windows">
+        <header class="section-header">
+            <div class="section-wrapper">
+                <h1>
+                    <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+                    Router usage
+                </h1>
+                <h3 id="router-no-credential-notice"></h3>
+            </div>
+        </header>
+
+        <div class="demo">
+            <div class="graph-container" id="graph-container3" style="width: 90%"></div>
+        </div>
+        <script>
+            if (localStorage.getItem('apiKey') === null) {
+                document.getElementById('router-no-credential-notice').innerText = "Please add your credentials first"
+            }
+            else {
+                makeRouterGraph();
+            }
+        </script>
+    </section>
+</template>
